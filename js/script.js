@@ -50,6 +50,16 @@ function match(pchoice){
 let playerSelection = pchoice;
 playerSelection = playerSelection.toLowerCase();
 let computerSelection = computerPlay();
+let e = document.querySelector(".row3 .right")
+if (computerSelection === "rock"){
+    e.setAttribute('src','images/1x/rock_left.png');
+}
+else if (computerSelection === "paper"){
+    e.setAttribute('src','images/1x/paper_left.png');
+}
+else{
+    e.setAttribute('src','images/1x/scissors_left.png');
+}
 game(playerSelection,computerSelection);
 }
 
@@ -76,7 +86,7 @@ function isGameFinished(){
         hideButtons();
         setTimeout(function() {
             window.location.reload();
-            }, 1000);
+            }, 4000);
     }
 }
 
