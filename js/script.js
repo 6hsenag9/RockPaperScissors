@@ -45,26 +45,93 @@ function game(playerSelection, computerSelection){
     }
 }
 
-function match(){
+function match(pchoice){
 
-let playerSelection = prompt("your throw?");
+let playerSelection = pchoice;
 playerSelection = playerSelection.toLowerCase();
 let computerSelection = computerPlay();
 game(playerSelection,computerSelection);
 }
 
+function displayWinner(){
+    // let container = document.querySelector(".container");
+    let div = document.createElement("div");
+    let ref = document.querySelector(".row3");
+    if(MatchesWon1 === 3){
+        div.innerHTML = '<p>You Win! Reloading</p>';
+    }
+    else{
+        div.innerHTML = '<p>You Lost! Reloading</p>';
+    }
+    container.insertBefore(div,ref);
+}
+
+function hideButtons(){
+    container.removeChild(btns);
+}
+
+function isGameFinished(){
+    if(MatchesWon1 === 3 || MatchesWon2 === 3){
+        displayWinner();
+        hideButtons();
+        setTimeout(function() {
+            window.location.reload();
+            }, 1000);
+    }
+}
+
 let MatchesWon1 = 0;
 let MatchesWon2 = 0;
-for(i = 0; i<5; i++){
-    if(MatchesWon1 === 3){
-        console.log("Yipee! you won the tournament")
-        break;
-    }
-    if(MatchesWon2 == 3){
-        console.log("Computer has won the tournament!");
-        break;
-    }
-    console.log(`MATCH ${i+1}`);
-    match();
-}
+
+let playbtn = document.querySelector(".Playbtn");
+let container = document.querySelector(".container");
+let btns = document.createElement("div");
+let wintext = document.createElement("div");
+playbtn.addEventListener('click', ()=>{
+    btns.innerHTML = `
+    <div class="row4">
+        <img id="rockb" class="btn" src="images/1x/rockb_right.png" alt="rock">
+        <img id="paperb" class="btn" src="images/1x/paperb_right.png" alt="paper">
+        <img id="scissorsb" class="btn" src="images/1x/scissorsb_right.png" alt="scissors">
+    </div>`;
+    container.removeChild(playbtn);
+    container.appendChild(btns);
+    
+    let rockb = document.querySelector("#rockb");
+    let paperb = document.querySelector("#paperb");
+    let scissorsb = document.querySelector("#scissorsb");
+    rockb.addEventListener('click',() => {
+        let rockb = document.querySelector(".row3 .left");
+        rockb.setAttribute('src', 'images/1x/rock_right.png');
+        match("rock");
+        isGameFinished();
+    });
+    paperb.addEventListener('click',() => {
+        let paperb = document.querySelector(".row3 .left");
+        paperb.setAttribute('src', 'images/1x/paper_right.png');
+        match("paper");
+        isGameFinished();
+    });
+    scissorsb.addEventListener('click',() => {
+        let scissorsb = document.querySelector(".row3 .left");
+        scissorsb.setAttribute('src', 'images/1x/scissors_right.png');
+        match("scissors");
+        isGameFinished();
+    });
+
+});
+
+
+// for(i = 0; i<5; i++){
+//     if(MatchesWon1 === 3){
+//         console.log("Yipee! you won the tournament")
+//         break;
+//     }
+//     if(MatchesWon2 == 3){
+//         console.log("Computer has won the tournament!");
+//         break;
+//     }
+//     console.log(`MATCH ${i+1}`);
+//     match();
+// }
 
