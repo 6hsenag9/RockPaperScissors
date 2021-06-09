@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* border: 5px solid red; */
+    align-items:center;
+}
+
+.row1{
+    text-align: center;
+    padding-top: 4rem;
+}
+.row1 p{
+    font-size: 2rem;
+}
+.row2{
+    padding: 3rem 0;
+}
+
+.row2 p{
+    display: inline;
+    
+}
+
+.row2 .player_name1{
+    padding-right: 5rem;
+}
+
+.row2 .player_name2{
+    padding-left: 5rem;
+}
+
+.row3{
+    padding-bottom: 3rem;
+}
+.row3 img{
+    width: 8rem;
+    height: 8rem;
+}
+.row3 .left{
+    margin-right: 5rem;
+}
+.row3 .right{
+    margin-left: 5rem;
+}
+
+.row4 img{
+    width: 4rem;
+    height: 4rem;
+}
