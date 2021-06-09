@@ -18,30 +18,30 @@ function game(playerSelection, computerSelection){
         console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
         console.log("paper beats rock, YOU LOSE");
     }
+    else if (playerSelection === "rock" && computerSelection === "scissors"){
+        MatchesWon1 += 1;
+        console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
+        console.log("paper beats rock, YOU WIN");
+    }
     else if (playerSelection === "paper" && computerSelection === "rock"){
         MatchesWon1 += 1;
         console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
         console.log("paper beats rock, YOU WIN");
     }
-    else if (playerSelection === "rock" && computerSelection === "scissors"){
-        MatchesWon1 += 1;
+    else if (playerSelection === "paper" && computerSelection === "scissors"){
+        MatchesWon2 += 1;
         console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
-        console.log("rock beats scissors, YOU WIN");
+        console.log("scissors beats paper, YOU LOSE");
     }
     else if (playerSelection === "scissors" && computerSelection === "rock"){
         MatchesWon2 += 1;
         console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
-        console.log("rock beats scissors, YOU LOSE");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "paper"){
-        MatchesWon1 += 1;
-        console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
-        console.log("scissors beats paper, YOU WIN");
+        console.log("rock beats scissors, YOU WIN");
     }
     else{
-        MatchesWon2 += 1;
+        MatchesWon1 += 1;
         console.log(`computer-score:${MatchesWon2}, player-score:${MatchesWon1}`);
-        console.log("paper beats rock, YOU LOSE");
+        console.log("scissors beats paper, YOU LOSE");
     }
 }
 
