@@ -132,16 +132,4 @@ playbtn.addEventListener('click', ()=>{
 });
 
 
-// for(i = 0; i<5; i++){
-//     if(MatchesWon1 === 3){
-//         console.log("Yipee! you won the tournament")
-//         break;
-//     }
-//     if(MatchesWon2 == 3){
-//         console.log("Computer has won the tournament!");
-//         break;
-//     }
-//     console.log(`MATCH ${i+1}`);
-//     match();
-// }
 
